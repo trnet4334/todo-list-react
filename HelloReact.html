@@ -5,6 +5,7 @@
     <title>Hello React</title>
     <script src="https://fb.me/react-with-addons-0.14.0.js"></script>
     <script src="https://fb.me/react-dom-0.14.0.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.13.1.js"></script>
 </head>
 <body>
     <script>
@@ -13,8 +14,41 @@
                 return React.DOM.h1(null, 'Hello React');
             }
         });
-        ReactDOM.render(React.createElement(HelloReact), document.
-            body);
+        ReactDOM.render(React.createElement(HelloReact), document.body);
+        //ReactDOM.render(<HelloReact />, document.body);
+
+        /*
+        var HelloMessage = React.createClass({displayName: "HelloMessage",
+            render: function() {
+                return React.createElement("div", null, " // works",
+                    React.createElement("div", null, "Hello React"),
+                    React.createElement("div", null, "How are you?")
+                );
+            }
+        });
+        */
+
+        var HelloReact = React.createClass({
+            render: function () {
+                return (
+                    <div>
+                        <div>Hello React</div>
+                        <div>How are you?</div>
+                    </div>
+                );
+            }
+        });
+
+        var HelloReact = React.createClass({
+            render: function () {
+                return (
+                    <div>
+                        <div>Hello React</div>
+                        <div>{this.props.message}</div>
+                    </div>
+                );
+            }
+        });
     </script>
 
 </body>
