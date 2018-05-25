@@ -41,10 +41,11 @@
 
         var HelloReact = React.createClass({
             render: function () {
+                var localMessage = this.props.message;
                 return (
                     <div>
                         <div>Hello React</div>
-                        <div>{this.props.message}</div>
+                        <div>{localMessage}</div>
                     </div>
                 );
             }
