@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
-import Layout from './components/Layout';
-import store from './store/configureStore';
-import registerServiceWorker from './containers/registerServiceWorker';
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(
-    <Provider store={store}>
-        <Layout/>
-    </Provider>,
-    document.getElementById('root')
-);
+import 'semantic-ui-css/semantic.min.css';
+import 'font-awesome/css/font-awesome.css'
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
 registerServiceWorker();
